@@ -141,3 +141,13 @@ terraform destroy -var-file=../envs/dev.tfvars
 ## Current Status
 
 The repository currently contains the service skeleton and Terraform layout. Service logic, event contracts, queues, and infrastructure definitions still need to be completed.
+
+## Destroying the Dev Environment
+
+To avoid unnecessary AWS costs, destroy the dev environment after testing:
+
+```bash  
+./scripts/destroy-dev.sh
+```
+
+##  

@@ -12,6 +12,8 @@ output "aws_region" {
   description = "AWS region."
   value       = var.aws_region
 }
+
+# VPC outputs
 output "vpc_id" {
   description = "ID of the project VPC."
   value       = module.vpc.vpc_id
@@ -22,6 +24,12 @@ output "public_subnet_ids" {
   value       = module.vpc.public_subnet_ids
 }
 
+output "private_subnet_ids" {
+  description = "IDs of the private subnets."
+  value       = module.vpc.private_subnet_ids
+}
+
+#security group outputs
 output "alb_security_group_id" {
   description = "ID of the ALB security group."
   value       = module.security_groups.alb_security_group_id
@@ -31,6 +39,8 @@ output "ecs_security_group_id" {
   description = "ID of the ECS tasks security group."
   value       = module.security_groups.ecs_security_group_id
 }
+
+#ecr outputs
 output "ecr_repository_urls" {
   description = "Map of service names to ECR repository URLs."
   value       = module.ecr.repository_urls
